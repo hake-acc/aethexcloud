@@ -1,0 +1,662 @@
+# AethexCloud — Information & Brand Product Requirements Document (Information PRD)
+
+---
+
+# Project Information
+
+Project Name:
+AethexCloud
+
+Company Name:
+AethexCloud
+
+Industry:
+Cloud Infrastructure & Hosting
+
+Tagline:
+Where Your Ideas Find a Home.
+
+Primary Goal:
+Provide fast, reliable and affordable cloud infrastructure for developers, creators, communities and businesses.
+
+---
+
+# Brand Description
+
+AethexCloud is a modern cloud hosting platform designed to provide reliable infrastructure for websites, VPS instances, Minecraft servers, Discord bots and Lavalink nodes.
+
+Every service is built around simplicity, performance and reliability while maintaining affordable pricing.
+
+The brand should communicate confidence, professionalism and technical excellence without unnecessary complexity.
+
+---
+
+# Brand Personality
+
+Modern
+
+Minimal
+
+Reliable
+
+Developer Friendly
+
+Professional
+
+Fast
+
+Transparent
+
+Confident
+
+Premium
+
+Approachable
+
+Technical
+
+---
+
+# Brand Voice
+
+Clear
+
+Simple
+
+Professional
+
+Short sentences.
+
+Never overpromise.
+
+Never use excessive marketing buzzwords.
+
+Always explain features in a straightforward way.
+
+---
+
+# Brand Mission
+
+Make powerful cloud infrastructure accessible to everyone.
+
+---
+
+# Brand Vision
+
+Become a trusted cloud platform where creators, developers and businesses can deploy projects with confidence.
+
+---
+
+# Brand Values
+
+Performance
+
+Reliability
+
+Transparency
+
+Security
+
+Scalability
+
+Affordability
+
+Customer First
+
+---
+
+# Hero
+
+Eyebrow
+
+Cloud Infrastructure
+
+Main Heading
+
+Host Anything.
+Build Everything.
+
+Sub Heading
+
+Reliable cloud infrastructure for websites, VPS, Minecraft servers, Discord bots and Lavalink nodes. Built for creators, developers and growing communities.
+
+Brand Line
+
+Where Your Ideas Find a Home.
+
+Primary CTA
+
+Get Started
+
+Secondary CTA
+
+Explore Plans
+
+---
+
+# Core Services
+
+Website Hosting
+
+Virtual Private Servers (VPS)
+
+Minecraft Server Hosting
+
+Discord Bot Hosting
+
+Lavalink Hosting
+
+---
+
+# Infrastructure
+
+Location
+
+Mumbai, India
+
+Processor
+
+AMD EPYC
+
+Storage
+
+NVMe SSD
+
+Virtualization
+
+KVM
+
+Root Access
+
+Full Root Access
+
+Network
+
+1 Gbps
+
+Deployment
+
+Instant Setup
+
+Infrastructure Name
+
+Aethex Infrastructure
+
+---
+
+# Discord Bot Hosting Plans
+
+## Script
+
+Code
+BT-2GB
+
+CPU
+100%
+
+RAM
+2 GB
+
+Storage
+10 GB SSD
+
+Price
+₹20/month
+
+---
+
+## Junior
+
+Code
+BT-4GB
+
+CPU
+200%
+
+RAM
+4 GB
+
+Storage
+20 GB SSD
+
+Price
+₹40/month
+
+---
+
+## Senior
+
+Code
+BT-8GB
+
+CPU
+300%
+
+RAM
+8 GB
+
+Storage
+30 GB SSD
+
+Price
+₹80/month
+
+---
+
+## Architect
+
+Code
+BT-16GB
+
+CPU
+400%
+
+RAM
+16 GB
+
+Storage
+40 GB SSD
+
+Price
+₹160/month
+
+---
+
+## DevOps
+
+Code
+BT-32GB
+
+CPU
+450%
+
+RAM
+32 GB
+
+Storage
+40 GB SSD
+
+Price
+₹320/month
+
+---
+
+## Mainframe
+
+Code
+BT-48GB
+
+CPU
+500%
+
+RAM
+48 GB
+
+Storage
+50 GB SSD
+
+Price
+₹480/month
+
+---
+
+## Root
+
+Code
+BT-64GB
+
+CPU
+700%
+
+RAM
+64 GB
+
+Storage
+60 GB SSD
+
+Price
+₹640/month
+
+---
+
+# India VPS Plans
+
+## Starter
+
+2 GB RAM
+
+1 vCPU
+
+20 GB NVMe
+
+₹49/month
+
+---
+
+## Basic
+
+4 GB RAM
+
+2 vCPU
+
+50 GB NVMe
+
+₹99/month
+
+---
+
+## Standard
+
+8 GB RAM
+
+4 vCPU
+
+100 GB NVMe
+
+₹199/month
+
+---
+
+## Pro
+
+16 GB RAM
+
+8 vCPU
+
+200 GB NVMe
+
+₹399/month
+
+---
+
+# Lavalink Hosting Plans
+
+Parrot
+
+LT-2GB
+
+2 GB RAM
+
+₹20/month
+
+---
+
+Allay
+
+LT-4GB
+
+4 GB RAM
+
+₹40/month
+
+---
+
+Goat
+
+LT-8GB
+
+8 GB RAM
+
+₹80/month
+
+---
+
+Ghast
+
+LT-16GB
+
+16 GB RAM
+
+₹160/month
+
+---
+
+Custom Plan
+
+Custom CPU
+
+Custom RAM
+
+Custom Storage
+
+40% Promotional Discount
+
+---
+
+# Minecraft Hosting Plans
+
+Nitwit
+
+VT-2GB
+
+2 GB RAM
+
+₹10/month
+
+---
+
+Farmer
+
+VT-4GB
+
+4 GB RAM
+
+₹20/month
+
+---
+
+Fletcher
+
+VT-8GB
+
+8 GB RAM
+
+₹40/month
+
+---
+
+Librarian
+
+VT-16GB
+
+16 GB RAM
+
+₹80/month
+
+---
+
+Cleric
+
+VT-32GB
+
+32 GB RAM
+
+₹160/month
+
+---
+
+Armorer
+
+VT-48GB
+
+48 GB RAM
+
+₹240/month
+
+---
+
+Iron Golem
+
+VT-64GB
+
+64 GB RAM
+
+₹320/month
+
+---
+
+# Platform Features
+
+Instant Deployment
+
+NVMe SSD Storage
+
+AMD EPYC Infrastructure
+
+High Performance CPUs
+
+Modern Hardware
+
+Reliable Network
+
+Full Root Access
+
+Scalable Resources
+
+Affordable Pricing
+
+Low Latency
+
+Developer Friendly
+
+Responsive Support
+
+---
+
+# Website Sections
+
+Hero
+
+Trusted Statistics
+
+Core Services
+
+Hosting Categories
+
+Feature Grid
+
+Infrastructure Overview
+
+Performance Metrics
+
+Pricing
+
+Testimonials
+
+Frequently Asked Questions
+
+Call To Action
+
+Footer
+
+---
+
+# Call To Action
+
+Headline
+
+Ready to Launch Your Next Project?
+
+Description
+
+Deploy your website, VPS, Minecraft server or Discord bot on infrastructure built for speed and reliability.
+
+Primary Button
+
+Deploy Now
+
+Secondary Button
+
+View Pricing
+
+---
+
+# Footer
+
+Brand
+
+AethexCloud
+
+Tagline
+
+Where Your Ideas Find a Home.
+
+Footer Navigation
+
+Services
+
+Pricing
+
+Knowledge Base
+
+Status
+
+Contact
+
+Terms of Service
+
+Privacy Policy
+
+---
+
+# SEO Keywords
+
+Cloud Hosting
+
+Website Hosting
+
+Discord Bot Hosting
+
+Minecraft Hosting
+
+Minecraft Server Hosting
+
+India VPS
+
+Cheap VPS India
+
+Affordable VPS
+
+AMD EPYC VPS
+
+NVMe VPS
+
+Developer Hosting
+
+Cloud Infrastructure
+
+Game Hosting
+
+Lavalink Hosting
+
+Node Hosting
+
+---
+
+# Copywriting Rules
+
+Use concise language.
+
+Avoid exaggerated marketing claims.
+
+Focus on measurable benefits.
+
+Maintain consistent terminology.
+
+Prioritize clarity over clever wording.
+
+Use sentence case.
+
+Never use emojis inside the website UI.
+
+Never use clickbait language.
+
+Every section must communicate value clearly.
+
+---
+
+# Final Brand Statement
+
+AethexCloud exists to provide dependable cloud infrastructure that empowers creators, developers and businesses to build, deploy and grow with confidence.
+
+Where Your Ideas Find a Home.

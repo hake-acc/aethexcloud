@@ -1,0 +1,2 @@
+- [AethexCloud project setup](aethexcloud-setup.md) — Next.js 16 app lives in `/aethexcloud` subdir; dev server must run on port 5000 with allowedDevOrigins set.
+- [Switzer font limitation](switzer-font.md) — Fontshare CDN is blocked in Replit preview; font falls back to system-ui in dev, will load correctly on Vercel production.
