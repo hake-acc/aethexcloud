@@ -6,6 +6,48 @@ import { IconArrowRight } from "@tabler/icons-react";
 import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
+type SplitTypeResult = {
+  lines: HTMLElement[];
+  revert: () => void;
+};
+
+function SplitType(element: HTMLElement): SplitTypeResult {
+  const originalMarkup = element.innerHTML;
+  const lineNodes: Node[][] = [[]];
+
+  element.childNodes.forEach((node) => {
+    if (node.nodeName === "BR") {
+      lineNodes.push([]);
+    } else {
+      lineNodes[lineNodes.length - 1].push(node.cloneNode(true));
+    }
+  });
+
+  const lines = lineNodes.map((nodes) => {
+    const mask = document.createElement("span");
+    const line = document.createElement("span");
+
+    mask.className = "block overflow-hidden";
+    line.className = "inline-block will-change-transform";
+    line.textContent = nodes.map((node) => node.textContent ?? "").join("");
+    mask.appendChild(line);
+    element.appendChild(mask);
+
+    return line;
+  });
+
+  element.replaceChildren(
+    ...lines.map((line) => line.parentElement as HTMLElement)
+  );
+
+  return {
+    lines,
+    revert: () => {
+      element.innerHTML = originalMarkup;
+    },
+  };
+}
+
 export function Hero() {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const subRef = useRef<HTMLParagraphElement>(null);
@@ -15,18 +57,34 @@ export function Hero() {
   const decorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const heading = headingRef.current;
+    if (!heading) return;
+
+    const splitHeading = SplitType(heading);
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+
+      gsap.set(splitHeading.lines, {
+        transform: "translate3d(0, 110%, 0)",
+        force3D: true,
+        willChange: "transform",
+      });
 
       tl.fromTo(
         labelRef.current,
         { opacity: 0, y: 16 },
         { opacity: 1, y: 0, duration: 0.6 }
       )
-        .fromTo(
-          headingRef.current,
-          { opacity: 0, y: 24 },
-          { opacity: 1, y: 0, duration: 0.75 },
+        .to(
+          splitHeading.lines,
+          {
+            transform: "translate3d(0, 0%, 0)",
+            duration: 0.9,
+            ease: "power4.out",
+            stagger: 0.07,
+            clearProps: "willChange",
+          },
           "-=0.3"
         )
         .fromTo(
@@ -55,7 +113,10 @@ export function Hero() {
         );
     });
 
-    return () => ctx.revert();
+    return () => {
+      ctx.revert();
+      splitHeading.revert();
+    };
   }, []);
 
   return (
