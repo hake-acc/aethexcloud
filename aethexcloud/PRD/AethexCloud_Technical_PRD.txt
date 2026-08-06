@@ -1,0 +1,138 @@
+AethexCloud — Technical Product Requirements Document (Technical PRD)
+
+1. Project Overview
+
+-   Project Name: AethexCloud
+-   Project Type: Premium Cloud Hosting Platform
+-   Application Type: Full Stack Web Application
+-   Primary Platform: Web
+-   Architecture: Next.js App Router
+
+2. Core Technology
+
+-   Framework: Next.js (Latest Stable)
+-   Frontend: React (Latest Stable)
+-   Language: TypeScript
+-   Runtime: Node.js LTS
+-   Package Manager: pnpm
+-   Deployment: Vercel
+
+3. Styling
+
+-   Tailwind CSS
+-   Utility-first architecture
+-   No CSS frameworks besides Tailwind
+-   Avoid inline styles unless required
+-   Reusable component styling
+-   No !important
+-   No duplicated utility patterns
+
+4. Typography
+
+-   Font: Switzer
+-   Source: Fontshare
+-   Loading: Next.js Font Optimization
+-   Fallback: system-ui, sans-serif
+
+5. Icons
+
+-   Library: @tabler/icons-react
+-   Stroke: 1.5
+-   Default Size: 24px
+-   Small: 20px
+-   Large: 32px
+-   Color: currentColor
+-   Never mix icon libraries
+
+6. Animation
+
+-   GSAP
+-   Smooth, purposeful animations
+-   Hardware accelerated transforms
+-   Prefer transforms over layout changes
+
+7. Images
+
+-   next/image
+-   Blender-style 3D assets
+-   Rounded geometry
+-   Transparent background
+-   WebP preferred, PNG when needed
+
+8. Code Standards
+
+-   TypeScript Strict
+-   Reusable components
+-   No duplicated code
+-   Composition over inheritance
+-   Consistent naming
+-   Avoid any where possible
+
+9. Performance
+
+-   Lighthouse Performance: 95+
+-   Accessibility: 100
+-   SEO: 100
+-   Best Practices: 100
+-   Lazy loading
+-   Dynamic imports
+-   Tree shaking
+-   Optimized fonts
+
+10. SEO
+
+-   Metadata API
+-   Open Graph
+-   Twitter Cards
+-   Canonical URLs
+-   robots.txt
+-   sitemap.xml
+-   Structured Data
+
+11. Accessibility
+
+-   WCAG AA
+-   Keyboard accessible
+-   Visible focus states
+-   Semantic HTML
+-   Proper heading hierarchy
+
+12. Deployment
+
+-   Platform: Vercel
+-   Branch: main
+-   Preview Deployments: Enabled
+-   Automatic Deployments: Enabled
+
+13. Browser Support
+
+-   Chrome
+-   Edge
+-   Firefox
+-   Safari
+-   Chrome Android
+-   Safari iOS
+
+14. Technical Principles
+
+-   Performance First
+-   Accessibility First
+-   Reusable Architecture
+-   Minimal Dependencies
+-   Scalable Folder Structure
+-   Production Ready
+
+15. Non-Negotiable Rules
+
+-   Next.js
+-   TypeScript
+-   Tailwind CSS
+-   GSAP
+-   Tabler Icons
+-   Switzer
+-   Vercel
+-   pnpm
+-   next/image
+-   Custom Blender-style illustrations
+-   Responsive by default
+-   Reusable components only
