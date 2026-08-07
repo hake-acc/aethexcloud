@@ -121,8 +121,41 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      {/* Responsive orbital artwork: the narrower source keeps its composition intact on phones,
+          while the larger source gives desktop screens more breathing room. */}
+      <picture
+        className="absolute inset-0 pointer-events-none select-none"
+      >
+        <source
+          media="(max-width: 767px)"
+          srcSet="/backgrounds/hero-mobile-dark.png"
+        />
+        <img
+          src="/backgrounds/hero-desktop-dark.png"
+          alt=""
+          width={1024}
+          height={1536}
+          fetchPriority="high"
+          className="h-full w-full object-cover object-center opacity-75"
+        />
+      </picture>
+
+      {/* Keep the artwork atmospheric and preserve contrast for the headline. */}
+      <div
+        className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_75%_65%_at_50%_45%,transparent_15%,rgba(5,5,5,0.28)_62%,#050505_100%)]"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#050505]/35 via-transparent to-[#050505]"
+        aria-hidden="true"
+      />
+
       {/* Decorative geometric elements */}
-      <div ref={decorRef} className="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div
+        ref={decorRef}
+        className="absolute inset-0 pointer-events-none opacity-60"
+        aria-hidden="true"
+      >
         {/* Top-right circle */}
         <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full border border-white/[0.04]" />
         <div className="absolute -top-16 -right-16 w-[400px] h-[400px] rounded-full border border-white/[0.03]" />
