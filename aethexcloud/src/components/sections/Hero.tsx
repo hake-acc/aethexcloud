@@ -28,7 +28,9 @@ function SplitType(element: HTMLElement): SplitTypeResult {
     const line = document.createElement("span");
 
     mask.className = "block overflow-hidden";
-    line.className = "inline-block will-change-transform";
+    // Keep the animated line block-level so long words/phrases can wrap
+    // inside the responsive heading instead of creating horizontal overflow.
+    line.className = "block will-change-transform";
     line.textContent = nodes.map((node) => node.textContent ?? "").join("");
     mask.appendChild(line);
     element.appendChild(mask);
