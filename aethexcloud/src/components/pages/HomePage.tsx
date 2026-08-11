@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Hero } from "@/components/sections/Hero";
 import { Stats } from "@/components/sections/Stats";
 import { CoreServices } from "@/components/sections/CoreServices";
@@ -9,13 +8,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTA } from "@/components/sections/CTA";
 
-export const metadata: Metadata = {
-  title: "AethexCloud — Where Your Ideas Find a Home",
-  description:
-    "Reliable cloud infrastructure for websites, VPS, Minecraft servers, Discord bots and Lavalink nodes. Built for creators, developers and growing communities.",
-};
-
-export default function HomePage() {
+export function HomePage() {
   return (
     <>
       <Hero />

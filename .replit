@@ -1,8 +1,13 @@
-modules = ["nodejs-20", "web"]
+modules = ["web", "nodejs-22"]
 
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[[ports]]
+localPort = 5001
+externalPort = 3000
+exposeLocalhost = true
 
 [workflows]
 runButton = "Project"
@@ -22,7 +27,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "cd aethexcloud && pnpm next dev --port 5000 --hostname 0.0.0.0"
+args = "cd aethexcloud && pnpm dev"
 waitForPort = 5000
 
 [workflows.workflow.metadata]

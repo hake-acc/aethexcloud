@@ -1,9 +1,4 @@
-"use client";
-
 import { useState, useEffect, useRef } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import {
   IconChevronDown,
@@ -33,12 +28,19 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
-  const pathname = usePathname();
+  const [pathname, setPathname] = useState("");
 
   useEffect(() => {
+    setPathname(window.location.pathname);
     const onScroll = () => setScrolled(window.scrollY > 16);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onPopState = () => setPathname(window.location.pathname);
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
   }, []);
 
   useEffect(() => {
@@ -90,8 +92,8 @@ export function Navbar() {
         <div className="mx-auto max-w-[1280px] px-6">
           <div className="flex h-16 items-center justify-between">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 flex-shrink-0">
-              <Image
+            <a href="/" className="flex items-center gap-3 flex-shrink-0">
+              <img
                 src="/aethex_cloud_logo.png"
                 alt="AethexCloud"
                 width={32}
@@ -101,7 +103,7 @@ export function Navbar() {
               <span className="text-white font-semibold text-lg tracking-tight">
                 AethexCloud
               </span>
-            </Link>
+            </a>
 
             {/* Desktop Nav */}
             <nav className="hidden lg:flex items-center gap-1">
@@ -140,7 +142,7 @@ export function Navbar() {
                       const Icon =
                         serviceIcons[service.label as keyof typeof serviceIcons];
                       return (
-                        <Link
+                        <a
                           key={service.href}
                           href={service.href}
                           className="flex items-start gap-3 rounded-[14px] p-3 transition-colors hover:bg-white/[0.04] group"
@@ -162,7 +164,7 @@ export function Navbar() {
                               {service.description}
                             </p>
                           </div>
-                        </Link>
+                        </a>
                       );
                     })}
                   </div>
@@ -170,7 +172,7 @@ export function Navbar() {
               </div>
 
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.href}
                   href={link.href}
                   className={cn(
@@ -181,7 +183,7 @@ export function Navbar() {
                   )}
                 >
                   {link.label}
-                </Link>
+                </a>
               ))}
             </nav>
 
@@ -225,27 +227,27 @@ export function Navbar() {
               const Icon =
                 serviceIcons[service.label as keyof typeof serviceIcons];
               return (
-                <Link
+                <a
                   key={service.href}
                   href={service.href}
                   className="flex items-center gap-3 px-3 py-3 rounded-[14px] text-[#A1A1AA] hover:text-white hover:bg-white/[0.04] transition-colors"
                 >
                   {Icon && <Icon size={18} stroke={1.5} />}
                   <span className="font-medium">{service.label}</span>
-                </Link>
+                </a>
               );
             })}
 
             <div className="h-px bg-white/[0.06] my-4" />
 
             {navLinks.map((link) => (
-              <Link
+                <a
                 key={link.href}
                 href={link.href}
                 className="flex items-center px-3 py-3 rounded-[14px] text-[#A1A1AA] hover:text-white hover:bg-white/[0.04] transition-colors font-medium"
               >
                 {link.label}
-              </Link>
+                </a>
             ))}
 
             <div className="h-px bg-white/[0.06] my-4" />

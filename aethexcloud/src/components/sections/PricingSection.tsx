@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { IconCheck, IconArrowRight } from "@tabler/icons-react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";

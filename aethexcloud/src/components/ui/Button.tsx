@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import Link from "next/link";
 
 type ButtonVariant = "primary" | "secondary" | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
@@ -60,9 +59,9 @@ export function Button({
       );
     }
     return (
-      <Link href={href} className={classes}>
+        <a href={href} className={classes}>
         {children}
-      </Link>
+        </a>
     );
   }
 

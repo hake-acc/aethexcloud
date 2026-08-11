@@ -1,5 +1,3 @@
-import Link from "next/link";
-import Image from "next/image";
 import {
   IconBrandDiscord,
   IconBrandX,
@@ -49,8 +47,8 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
           {/* Brand */}
           <div className="lg:col-span-2 flex flex-col gap-5">
-            <Link href="/" className="flex items-center gap-3 w-fit">
-              <Image
+            <a href="/" className="flex items-center gap-3 w-fit">
+              <img
                 src="/aethex_cloud_logo.png"
                 alt="AethexCloud"
                 width={28}
@@ -60,7 +58,7 @@ export function Footer() {
               <span className="text-white font-semibold text-base tracking-tight">
                 AethexCloud
               </span>
-            </Link>
+            </a>
             <p className="text-[#71717A] text-sm leading-relaxed max-w-xs">
               Where Your Ideas Find a Home. Reliable cloud infrastructure for
               creators, developers and growing communities.
@@ -94,12 +92,12 @@ export function Footer() {
                 <ul className="flex flex-col gap-3">
                   {group.links.map((link) => (
                     <li key={link.href}>
-                      <Link
+                      <a
                         href={link.href}
                         className="text-sm text-[#A1A1AA] hover:text-white transition-colors"
                       >
                         {link.label}
-                      </Link>
+                      </a>
                     </li>
                   ))}
                 </ul>

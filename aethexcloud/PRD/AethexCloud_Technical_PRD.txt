@@ -6,12 +6,12 @@ AethexCloud — Technical Product Requirements Document (Technical PRD)
 -   Project Type: Premium Cloud Hosting Platform
 -   Application Type: Full Stack Web Application
 -   Primary Platform: Web
--   Architecture: Next.js App Router
+-   Architecture: Astro static output with React islands
 
 2. Core Technology
 
--   Framework: Next.js (Latest Stable)
--   Frontend: React (Latest Stable)
+-   Framework: Astro (Latest Stable)
+-   Frontend: Astro with React islands where interaction is required
 -   Language: TypeScript
 -   Runtime: Node.js LTS
 -   Package Manager: pnpm
@@ -31,7 +31,7 @@ AethexCloud — Technical Product Requirements Document (Technical PRD)
 
 -   Font: Switzer
 -   Source: Fontshare
--   Loading: Next.js Font Optimization
+-   Loading: Fontshare stylesheet with system-ui fallback
 -   Fallback: system-ui, sans-serif
 
 5. Icons
@@ -53,7 +53,7 @@ AethexCloud — Technical Product Requirements Document (Technical PRD)
 
 7. Images
 
--   next/image
+-   Astro static assets
 -   Blender-style 3D assets
 -   Rounded geometry
 -   Transparent background
@@ -81,7 +81,7 @@ AethexCloud — Technical Product Requirements Document (Technical PRD)
 
 10. SEO
 
--   Metadata API
+-   Astro document metadata
 -   Open Graph
 -   Twitter Cards
 -   Canonical URLs
@@ -124,7 +124,7 @@ AethexCloud — Technical Product Requirements Document (Technical PRD)
 
 15. Non-Negotiable Rules
 
--   Next.js
+-   Astro
 -   TypeScript
 -   Tailwind CSS
 -   GSAP
@@ -132,7 +132,7 @@ AethexCloud — Technical Product Requirements Document (Technical PRD)
 -   Switzer
 -   Vercel
 -   pnpm
--   next/image
+-   Astro static assets
 -   Custom Blender-style illustrations
 -   Responsive by default
 -   Reusable components only

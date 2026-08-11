@@ -1,6 +1,4 @@
-"use client";
-
-import { useState } from "react";
+import { useState, type SubmitEvent } from "react";
 import { IconSend } from "@tabler/icons-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -19,7 +17,7 @@ const subjects = [
 export function ContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("sending");
     // Simulate async submission

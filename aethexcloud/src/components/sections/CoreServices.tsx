@@ -1,4 +1,3 @@
-import Link from "next/link";
 import {
   IconWorld,
   IconServer,
@@ -56,7 +55,7 @@ export function CoreServices() {
                     : ""
                 }
               >
-                <Link
+                <a
                   href={service.href}
                   className="group flex flex-col gap-5 rounded-[24px] border border-white/[0.08] bg-[#111111] p-7 transition-all duration-300 hover:border-white/[0.15] hover:bg-[#151515] h-full"
                 >
@@ -95,7 +94,7 @@ export function CoreServices() {
                       className="transition-transform group-hover:translate-x-1"
                     />
                   </div>
-                </Link>
+                </a>
               </ScrollReveal>
             );
           })}

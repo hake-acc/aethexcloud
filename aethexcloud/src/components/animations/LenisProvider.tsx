@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
@@ -7,7 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export function LenisProvider({ children }: { children: React.ReactNode }) {
+export function LenisProvider() {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -30,5 +28,5 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
     };
   }, []);
 
-  return <>{children}</>;
+  return null;
 }

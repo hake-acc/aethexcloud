@@ -1,2 +1,2 @@
-- [AethexCloud project setup](aethexcloud-setup.md) — Next.js 16 app lives in `/aethexcloud` subdir; dev server must run on port 5000 with allowedDevOrigins set.
+- [AethexCloud project setup](aethexcloud-setup.md) — Astro app lives in `/aethexcloud` subdir; use its pnpm workspace and run the dev server on port 5000.
 - [Switzer font limitation](switzer-font.md) — Fontshare CDN is blocked in Replit preview; font falls back to system-ui in dev, will load correctly on Vercel production.
