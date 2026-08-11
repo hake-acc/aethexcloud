@@ -1,6 +1,7 @@
 // ─── Navigation ────────────────────────────────────────────────────────────────
 
 export const navLinks = [
+  { label: "Home", href: "/" },
   { label: "Pricing", href: "/pricing" },
   { label: "Knowledge Base", href: "/knowledge-base" },
   { label: "Status", href: "/status" },

@@ -9,6 +9,11 @@ import {
   IconSword,
   IconBrandDiscord,
   IconMusic,
+  IconHome2,
+  IconTag,
+  IconBook2,
+  IconActivity,
+  IconMail,
 } from "@tabler/icons-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
@@ -20,6 +25,14 @@ const serviceIcons = {
   "Minecraft Hosting": IconSword,
   "Discord Bot Hosting": IconBrandDiscord,
   "Lavalink Hosting": IconMusic,
+};
+
+const navIcons = {
+  "/": IconHome2,
+  "/pricing": IconTag,
+  "/knowledge-base": IconBook2,
+  "/status": IconActivity,
+  "/contact": IconMail,
 };
 
 export function Navbar() {
@@ -172,18 +185,26 @@ export function Navbar() {
               </div>
 
               {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    "px-4 py-2 text-sm font-medium rounded-[12px] transition-colors duration-150",
-                    pathname === link.href
-                      ? "text-white bg-white/[0.06]"
-                      : "text-[#A1A1AA] hover:text-white hover:bg-white/[0.04]"
-                  )}
-                >
-                  {link.label}
-                </a>
+                (() => {
+                  const Icon = navIcons[link.href as keyof typeof navIcons];
+                  const isActive = pathname === link.href;
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      aria-current={isActive ? "page" : undefined}
+                      className={cn(
+                        "flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-[12px] transition-colors duration-150",
+                        isActive
+                          ? "text-white bg-white/[0.06]"
+                          : "text-[#A1A1AA] hover:text-white hover:bg-white/[0.04]"
+                      )}
+                    >
+                      {Icon && <Icon size={15} stroke={1.5} />}
+                      {link.label}
+                    </a>
+                  );
+                })()
               ))}
             </nav>
 
@@ -241,13 +262,26 @@ export function Navbar() {
             <div className="h-px bg-white/[0.06] my-4" />
 
             {navLinks.map((link) => (
+              (() => {
+                const Icon = navIcons[link.href as keyof typeof navIcons];
+                const isActive = pathname === link.href;
+                return (
                 <a
                 key={link.href}
                 href={link.href}
-                className="flex items-center px-3 py-3 rounded-[14px] text-[#A1A1AA] hover:text-white hover:bg-white/[0.04] transition-colors font-medium"
+                  aria-current={isActive ? "page" : undefined}
+                  className={cn(
+                    "flex items-center gap-3 px-3 py-3 rounded-[14px] transition-colors font-medium",
+                    isActive
+                      ? "text-white bg-white/[0.06]"
+                      : "text-[#A1A1AA] hover:text-white hover:bg-white/[0.04]"
+                  )}
               >
+                  {Icon && <Icon size={18} stroke={1.5} />}
                 {link.label}
                 </a>
+                );
+              })()
             ))}
 
             <div className="h-px bg-white/[0.06] my-4" />
