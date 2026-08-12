@@ -31,3 +31,78 @@ body { background-color: #050505; color: #FFFFFF; font-family: 'Switzer', system
 ::-webkit-scrollbar-track { background: #0D0D0D; }
 ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+
+/* A restrained material language: light moves across surfaces, never neon. */
+@keyframes aethex-drift {
+  0%, 100% { transform: translate3d(-2%, -1%, 0) scale(1); }
+  50% { transform: translate3d(2%, 1%, 0) scale(1.04); }
+}
+@keyframes aethex-sheen {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+.aethex-surface {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(400px circle at var(--mx, 50%) var(--my, 0%), rgba(255,255,255,.075), transparent 42%),
+    linear-gradient(145deg, rgba(255,255,255,.045), transparent 38%),
+    #111;
+  transition: transform 420ms cubic-bezier(.22,1,.36,1), border-color 420ms ease, background 420ms ease;
+}
+.aethex-surface::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.11) 50%, transparent 70%);
+  transform: translateX(-120%);
+  opacity: 0;
+}
+.aethex-surface:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.24) !important; }
+.aethex-surface:hover::before { opacity: 1; animation: aethex-sheen 900ms cubic-bezier(.2,.7,.2,1); }
+.aethex-border {
+  position: relative;
+  border: 1px solid rgba(255,255,255,.12);
+}
+.aethex-border::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(115deg, rgba(255,255,255,.38), transparent 32%, transparent 68%, rgba(255,255,255,.16));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 420ms ease;
+  pointer-events: none;
+}
+.aethex-border:hover::after, .aethex-border:focus-within::after { opacity: 1; }
+.aethex-icon {
+  transition: transform 420ms cubic-bezier(.22,1,.36,1), background-color 300ms ease, border-color 300ms ease;
+}
+.aethex-surface:hover .aethex-icon { transform: translateY(-2px) rotate(-4deg); background-color: rgba(255,255,255,.1); border-color: rgba(255,255,255,.2); }
+.aethex-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.28) 50%, transparent 65%);
+  transform: translateX(-130%);
+  transition: transform 700ms cubic-bezier(.2,.7,.2,1);
+  pointer-events: none;
+}
+.aethex-button:hover { transform: translateY(-2px); }
+.aethex-button:hover::after { transform: translateX(130%); }
+.aethex-grid {
+  background-image: linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  .aethex-surface:hover { transform: none; }
+}

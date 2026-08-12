@@ -42,7 +42,7 @@ export function Button({
   type = "button",
 }: ButtonProps) {
   const classes = cn(
-    "inline-flex items-center justify-center font-medium rounded-[16px] transition-all duration-200 cursor-pointer select-none whitespace-nowrap",
+    "aethex-button inline-flex items-center justify-center font-medium rounded-[16px] transition-all duration-300 cursor-pointer select-none whitespace-nowrap relative overflow-hidden",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50",
     "disabled:opacity-40 disabled:cursor-not-allowed",
     variantClasses[variant],

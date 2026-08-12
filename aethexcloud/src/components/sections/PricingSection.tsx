@@ -67,14 +67,14 @@ function PricingCard({ plan, features }: { plan: PricingPlan; features: string[]
   return (
     <div
       className={cn(
-        "relative flex flex-col gap-6 rounded-[24px] border p-6 transition-colors",
+        "aethex-surface aethex-border relative flex flex-col gap-6 rounded-[24px] border p-6",
         plan.highlighted
           ? "border-white/25 bg-[#151515]"
           : "border-white/[0.08] bg-[#111111] hover:border-white/[0.15]"
       )}
     >
       {plan.highlighted && (
-        <div className="absolute -top-px left-1/2 -translate-x-1/2 px-4 py-1 bg-white rounded-b-[10px]">
+        <div className="absolute -top-px left-1/2 -translate-x-1/2 px-4 py-1 bg-white rounded-b-[10px] z-10">
           <span className="text-xs font-semibold text-black">Popular</span>
         </div>
       )}
@@ -188,7 +188,7 @@ export function PricingSection() {
           {/* Custom plan for Lavalink */}
           {activeTab === "lavalink" && (
             <ScrollReveal delay={plans.length * 0.06}>
-              <div className="flex flex-col gap-6 rounded-[24px] border border-dashed border-white/[0.12] bg-transparent p-6 h-full">
+              <div className="aethex-surface aethex-border flex flex-col gap-6 rounded-[24px] border border-dashed border-white/[0.12] bg-transparent p-6 h-full">
                 <div>
                   <p className="text-xs text-[#71717A] font-medium mb-1">Custom</p>
                   <p className="text-lg font-semibold text-white">Custom Plan</p>

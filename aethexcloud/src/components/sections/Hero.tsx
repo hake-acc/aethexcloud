@@ -153,14 +153,14 @@ export function Hero() {
       {/* Decorative geometric elements */}
       <div
         ref={decorRef}
-        className="absolute inset-0 pointer-events-none opacity-60"
+        className="aethex-grid absolute inset-0 pointer-events-none opacity-60"
         aria-hidden="true"
       >
         {/* Top-right circle */}
-        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full border border-white/[0.04]" />
+        <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full border border-white/[0.04] animate-[aethex-drift_18s_ease-in-out_infinite]" />
         <div className="absolute -top-16 -right-16 w-[400px] h-[400px] rounded-full border border-white/[0.03]" />
         {/* Bottom-left */}
-        <div className="absolute -bottom-48 -left-48 w-[700px] h-[700px] rounded-full border border-white/[0.03]" />
+        <div className="absolute -bottom-48 -left-48 w-[700px] h-[700px] rounded-full border border-white/[0.03] animate-[aethex-drift_22s_ease-in-out_infinite_reverse]" />
         {/* Center subtle grid dot */}
         <div
           className="absolute inset-0"

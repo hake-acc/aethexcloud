@@ -80,10 +80,10 @@ export function ServicesPage() {
             const Icon = service.icon;
             return (
               <ScrollReveal key={service.title} delay={i * 0.07}>
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 rounded-[24px] border border-white/[0.08] bg-[#111111] p-8 lg:p-10 hover:border-white/[0.15] transition-colors">
+                <div className="aethex-surface aethex-border grid grid-cols-1 lg:grid-cols-5 gap-8 rounded-[24px] border border-white/[0.08] p-8 lg:p-10">
                   <div className="lg:col-span-3 flex flex-col gap-5">
                     <div className="flex items-center gap-3">
-                      <div className="rounded-[14px] border border-white/[0.08] bg-white/[0.04] p-3"><Icon size={22} stroke={1.5} className="text-white" /></div>
+                       <div className="aethex-icon rounded-[14px] border border-white/[0.08] bg-white/[0.04] p-3"><Icon size={22} stroke={1.5} className="text-white" /></div>
                       <span className="text-xs font-medium text-[#71717A] border border-white/[0.08] rounded-full px-2.5 py-1">{service.tag}</span>
                     </div>
                     <div>

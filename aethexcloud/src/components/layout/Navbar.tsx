@@ -127,7 +127,7 @@ export function Navbar() {
                   onMouseLeave={() => setServicesOpen(false)}
                   onClick={() => setServicesOpen((v) => !v)}
                   className={cn(
-                    "flex items-center gap-1.5 px-4 py-2 text-sm font-medium rounded-[12px] transition-colors duration-150",
+                    "flex items-center gap-1.5 px-2.5 py-2 text-sm font-medium rounded-[12px] transition-all duration-300",
                     "text-[#A1A1AA] hover:text-white hover:bg-white/[0.04]"
                   )}
                   aria-expanded={servicesOpen}
@@ -149,16 +149,16 @@ export function Navbar() {
                     ref={dropdownRef}
                     onMouseEnter={() => setServicesOpen(true)}
                     onMouseLeave={() => setServicesOpen(false)}
-                    className="absolute top-full left-0 mt-2 w-72 rounded-[20px] border border-white/[0.08] bg-[#0D0D0D] p-2 shadow-xl"
+                    className="aethex-border absolute top-full left-0 mt-2 w-72 rounded-[20px] border border-white/[0.08] bg-[#0D0D0D] p-2 shadow-xl"
                   >
                     {serviceLinks.map((service) => {
                       const Icon =
                         serviceIcons[service.label as keyof typeof serviceIcons];
                       return (
-                        <a
+                  <a
                           key={service.href}
                           href={service.href}
-                          className="flex items-start gap-3 rounded-[14px] p-3 transition-colors hover:bg-white/[0.04] group"
+                    className="flex items-start gap-3 rounded-[14px] p-3 transition-all duration-300 hover:bg-white/[0.06] hover:translate-x-1 group"
                         >
                           {Icon && (
                             <div className="mt-0.5 rounded-[10px] border border-white/[0.08] bg-white/[0.04] p-1.5">
@@ -194,7 +194,7 @@ export function Navbar() {
                       href={link.href}
                       aria-current={isActive ? "page" : undefined}
                       className={cn(
-                        "flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-[12px] transition-colors duration-150",
+                        "flex items-center gap-2 px-2.5 py-2 text-sm font-medium rounded-[12px] transition-colors duration-150",
                         isActive
                           ? "text-white bg-white/[0.06]"
                           : "text-[#A1A1AA] hover:text-white hover:bg-white/[0.04]"

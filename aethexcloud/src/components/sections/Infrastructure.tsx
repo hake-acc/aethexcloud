@@ -33,7 +33,7 @@ export function Infrastructure() {
                 {infrastructureSpecs.map((spec) => (
                   <div
                     key={spec.label}
-                    className="flex flex-col gap-1 rounded-[16px] border border-white/[0.08] bg-[#111111] px-4 py-3"
+                    className="aethex-surface aethex-border flex flex-col gap-1 rounded-[16px] border border-white/[0.08] px-4 py-3"
                   >
                     <p className="text-xs text-[#71717A] font-medium">
                       {spec.label}
@@ -51,9 +51,9 @@ export function Infrastructure() {
           <ScrollReveal direction="right" delay={0.15}>
             <div className="flex flex-col gap-6">
               {/* Location card */}
-              <div className="rounded-[24px] border border-white/[0.08] bg-[#111111] p-7">
+              <div className="aethex-surface aethex-border rounded-[24px] border border-white/[0.08] p-7">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="rounded-[12px] border border-white/[0.08] bg-white/[0.04] p-2.5">
+                  <div className="aethex-icon rounded-[12px] border border-white/[0.08] bg-white/[0.04] p-2.5">
                     <IconMapPin size={20} stroke={1.5} className="text-white" />
                   </div>
                   <div>
