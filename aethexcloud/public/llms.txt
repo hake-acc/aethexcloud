@@ -4,6 +4,14 @@
 
 AethexCloud provides hosting infrastructure for creators, developers, and growing communities. Services run on AMD EPYC processors and NVMe SSD storage in Mumbai, India.
 
+## Key facts
+
+- AethexCloud is a cloud hosting provider serving creators, developers, and online communities.
+- Infrastructure is located in Mumbai, India.
+- Plans use AMD EPYC processors, NVMe SSD storage, KVM virtualisation, and a 1 Gbps network uplink.
+- Services are designed for websites, VPS workloads, Minecraft servers, Discord bots, and Lavalink audio nodes.
+- Pricing is listed in Indian rupees and plans start from ₹10/month for selected services.
+
 ## Services
 
 - [Website Hosting](https://aethexcloud.com/services): Hosting for portfolios, blogs, static sites, and full-stack web applications.

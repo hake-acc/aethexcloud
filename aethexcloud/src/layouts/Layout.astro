@@ -18,6 +18,42 @@ const siteTitle = title === "AethexCloud — Where Your Ideas Find a Home"
   ? title
   : `${title} | AethexCloud`;
 const siteUrl = "https://aethexcloud.com";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const organizationId = `${siteUrl}/#organization`;
+const websiteId = `${siteUrl}/#website`;
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": organizationId,
+      name: "AethexCloud",
+      url: siteUrl,
+      logo: `${siteUrl}/aethex_cloud_logo.png`,
+      description,
+      areaServed: ["India", "South Asia"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": websiteId,
+      url: siteUrl,
+      name: "AethexCloud",
+      description,
+      publisher: { "@id": organizationId },
+      inLanguage: "en-IN",
+    },
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      url: canonicalUrl,
+      name: siteTitle,
+      description,
+      isPartOf: { "@id": websiteId },
+      about: { "@id": organizationId },
+      inLanguage: "en-IN",
+    },
+  ],
+};
 ---
 <!doctype html>
 <html lang="en" class="h-full">
@@ -25,24 +61,34 @@ const siteUrl = "https://aethexcloud.com";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/aethex_cloud_logo.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site information" />
     <link rel="preconnect" href="https://api.fontshare.com" />
     <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" />
     <title>{siteTitle}</title>
     <meta name="description" content={description} />
+    <meta name="author" content="AethexCloud" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="color-scheme" content="dark" />
     <meta name="keywords" content="Cloud Hosting, Website Hosting, Discord Bot Hosting, Minecraft Hosting, Minecraft Server Hosting, India VPS, Cheap VPS India, Affordable VPS, AMD EPYC VPS, NVMe VPS, Developer Hosting, Cloud Infrastructure, Game Hosting, Lavalink Hosting, Node Hosting" />
-    <link rel="canonical" href={siteUrl + Astro.url.pathname} />
+    <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_IN" />
     <meta property="og:site_name" content="AethexCloud" />
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:image" content={`${siteUrl}/aethex_cloud_logo.png`} />
     <meta property="og:image:alt" content="AethexCloud" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={siteTitle} />
     <meta name="twitter:description" content={description} />
+    <meta name="twitter:url" content={canonicalUrl} />
     <meta name="twitter:image" content={`${siteUrl}/aethex_cloud_logo.png`} />
+    <meta name="twitter:image:alt" content="AethexCloud logo" />
     <meta name="robots" content="index, follow" />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body class="min-h-full flex flex-col antialiased">
     <LenisProvider client:load />
