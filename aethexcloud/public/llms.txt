@@ -1,0 +1,33 @@
+# AethexCloud
+
+> Reliable cloud infrastructure for websites, VPS, Minecraft servers, Discord bots, and Lavalink nodes.
+
+AethexCloud provides hosting infrastructure for creators, developers, and growing communities. Services run on AMD EPYC processors and NVMe SSD storage in Mumbai, India.
+
+## Services
+
+- [Website Hosting](https://aethexcloud.com/services): Hosting for portfolios, blogs, static sites, and full-stack web applications.
+- [Virtual Private Servers](https://aethexcloud.com/services): KVM virtualised VPS plans with full root access, NVMe storage, and a 1 Gbps network uplink.
+- [Minecraft Server Hosting](https://aethexcloud.com/services): Minecraft hosting for private worlds and public servers, with support for Vanilla, Paper, Spigot, and Forge.
+- [Discord Bot Hosting](https://aethexcloud.com/services): Always-on hosting for Node.js, Python, and other Discord bot runtimes.
+- [Lavalink Hosting](https://aethexcloud.com/services): Low-latency Lavalink nodes for Discord music bots.
+
+## Pages
+
+- [Home](https://aethexcloud.com/): Overview of AethexCloud infrastructure and hosting services.
+- [Services](https://aethexcloud.com/services): Detailed service descriptions and included features.
+- [Pricing](https://aethexcloud.com/pricing): Plans for Minecraft, Discord bots, VPS, Lavalink, and website hosting.
+- [Contact](https://aethexcloud.com/contact): Contact AethexCloud about hosting requirements and custom configurations.
+
+## Infrastructure
+
+- Location: Mumbai, India
+- Processor: AMD EPYC
+- Storage: NVMe SSD
+- Network: 1 Gbps
+- Virtualisation: KVM
+- Uptime target: 99.9%
+
+## Primary sitemap
+
+- [Sitemap](https://aethexcloud.com/sitemap.xml)
