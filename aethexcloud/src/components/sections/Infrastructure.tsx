@@ -20,12 +20,12 @@ export function Infrastructure() {
             <div className="flex flex-col gap-6">
               <SectionLabel>Infrastructure</SectionLabel>
               <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-white">
-                Aethex Infrastructure
+                High-performance hosting infrastructure in India
               </h2>
               <p className="text-[#A1A1AA] text-lg leading-relaxed">
-                All services run on modern, enterprise-grade hardware located in
-                Mumbai, India. We use AMD EPYC processors and NVMe SSD storage
-                to deliver consistently fast performance.
+                All services run on modern, enterprise-grade hardware in Mumbai,
+                India. AMD EPYC processors, NVMe SSD storage and a 1 Gbps
+                uplink deliver consistently fast performance for Indian users.
               </p>
 
               {/* Spec list */}

@@ -7,18 +7,21 @@ import { LenisProvider } from "@/components/animations/LenisProvider";
 interface Props {
   title?: string;
   description?: string;
+  keywords?: string;
+  additionalStructuredData?: Record<string, unknown>;
 }
 
 const {
-  title = "AethexCloud — Where Your Ideas Find a Home",
+  title = "Cloud Hosting in India for Websites, Servers & Communities",
   description = "Reliable cloud infrastructure for websites, VPS, Minecraft servers, Discord bots and Lavalink nodes. Built for creators, developers and growing communities.",
+  keywords = "cloud hosting India, website hosting India, VPS India, Minecraft server hosting India, Discord bot hosting, Lavalink hosting",
+  additionalStructuredData,
 } = Astro.props;
 
-const siteTitle = title === "AethexCloud — Where Your Ideas Find a Home"
-  ? title
-  : `${title} | AethexCloud`;
+const siteTitle = title.includes("AethexCloud") ? title : `${title} | AethexCloud`;
 const siteUrl = "https://aethexcloud.com";
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const isHomePage = Astro.url.pathname === "/";
 const organizationId = `${siteUrl}/#organization`;
 const websiteId = `${siteUrl}/#website`;
 const structuredData = {
@@ -64,14 +67,34 @@ const structuredData = {
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
     <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM-readable site information" />
-    <link rel="preconnect" href="https://api.fontshare.com" />
-    <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700&display=swap" />
+    <link rel="preload" href="/fonts/switzer-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/switzer-700.woff2" as="font" type="font/woff2" crossorigin />
+    {isHomePage && (
+      <>
+        <link
+          rel="preload"
+          href="/backgrounds/hero-desktop-dark.webp"
+          as="image"
+          type="image/webp"
+          media="(min-width: 768px)"
+          fetchpriority="high"
+        />
+        <link
+          rel="preload"
+          href="/backgrounds/hero-mobile-dark.webp"
+          as="image"
+          type="image/webp"
+          media="(max-width: 767px)"
+          fetchpriority="high"
+        />
+      </>
+    )}
     <title>{siteTitle}</title>
     <meta name="description" content={description} />
     <meta name="author" content="AethexCloud" />
     <meta name="theme-color" content="#050505" />
     <meta name="color-scheme" content="dark" />
-    <meta name="keywords" content="Cloud Hosting, Website Hosting, Discord Bot Hosting, Minecraft Hosting, Minecraft Server Hosting, India VPS, Cheap VPS India, Affordable VPS, AMD EPYC VPS, NVMe VPS, Developer Hosting, Cloud Infrastructure, Game Hosting, Lavalink Hosting, Node Hosting" />
+    <meta name="keywords" content={keywords} />
     <link rel="canonical" href={canonicalUrl} />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_IN" />
@@ -89,10 +112,11 @@ const structuredData = {
     <meta name="twitter:image:alt" content="AethexCloud logo" />
     <meta name="robots" content="index, follow" />
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    {additionalStructuredData && <script is:inline type="application/ld+json" set:html={JSON.stringify(additionalStructuredData)} />}
   </head>
   <body class="min-h-full flex flex-col antialiased">
-    <LenisProvider client:load />
-    <Navbar client:load />
+    <LenisProvider client:idle />
+    <Navbar client:idle />
     <main class="flex-1">
       <slot />
     </main>

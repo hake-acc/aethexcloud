@@ -68,8 +68,9 @@ export function ServicesPage() {
           <ScrollReveal>
             <div className="flex flex-col items-center text-center gap-4">
               <SectionLabel>Services</SectionLabel>
-              <h1 className="text-5xl sm:text-6xl font-bold tracking-[-0.04em] text-white">Five services, one platform</h1>
-              <p className="max-w-2xl text-lg text-[#A1A1AA]">Every service runs on Aethex Infrastructure — AMD EPYC processors and NVMe SSD storage in Mumbai, India.</p>
+              <h1 className="text-5xl sm:text-6xl font-bold tracking-[-0.04em] text-white">Hosting services in India for every project</h1>
+              <p className="max-w-2xl text-lg text-[#A1A1AA]">Choose website hosting, VPS, Minecraft, Discord bot or Lavalink hosting on AMD EPYC and NVMe infrastructure in Mumbai, India.</p>
+              <p className="max-w-2xl text-base text-[#71717A]">Need help choosing? Read our <a href="/knowledge-base" className="text-white underline underline-offset-4 hover:text-white/70">hosting guides</a> or compare <a href="/pricing" className="text-white underline underline-offset-4 hover:text-white/70">plans and pricing</a>.</p>
             </div>
           </ScrollReveal>
         </div>
@@ -80,7 +81,7 @@ export function ServicesPage() {
             const Icon = service.icon;
             return (
               <ScrollReveal key={service.title} delay={i * 0.07}>
-                <div className="aethex-surface aethex-border grid grid-cols-1 lg:grid-cols-5 gap-8 rounded-[24px] border border-white/[0.08] p-8 lg:p-10">
+                <div id={`${service.tag === "Web" ? "website-hosting" : service.tag === "VPS" ? "vps-hosting" : service.tag === "Game" ? "minecraft-hosting" : service.tag === "Bot" ? "discord-bot-hosting" : "lavalink-hosting"}`} className="aethex-surface aethex-border scroll-mt-24 grid grid-cols-1 lg:grid-cols-5 gap-8 rounded-[24px] border border-white/[0.08] p-8 lg:p-10">
                   <div className="lg:col-span-3 flex flex-col gap-5">
                     <div className="flex items-center gap-3">
                        <div className="aethex-icon rounded-[14px] border border-white/[0.08] bg-white/[0.04] p-3"><Icon size={22} stroke={1.5} className="text-white" /></div>

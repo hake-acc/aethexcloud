@@ -27,11 +27,11 @@ export function CoreServices() {
           <div className="flex flex-col items-center text-center gap-4 mb-16">
             <SectionLabel>Core Services</SectionLabel>
             <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight text-white">
-              Everything you need to deploy
+              India cloud hosting for every deployment
             </h2>
             <p className="max-w-xl text-[#A1A1AA] text-lg">
-              Five specialised hosting services, all running on Aethex
-              Infrastructure in Mumbai.
+              Website hosting, VPS, game servers and bot hosting, all running
+              on Aethex Infrastructure in Mumbai.
             </p>
           </div>
         </ScrollReveal>

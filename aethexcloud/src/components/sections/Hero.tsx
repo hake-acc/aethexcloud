@@ -128,7 +128,16 @@ export function Hero() {
       >
         <source
           media="(max-width: 767px)"
+          srcSet="/backgrounds/hero-mobile-dark.webp"
+          type="image/webp"
+        />
+        <source
+          media="(max-width: 767px)"
           srcSet="/backgrounds/hero-mobile-dark.png"
+        />
+        <source
+          srcSet="/backgrounds/hero-desktop-dark.webp"
+          type="image/webp"
         />
         <img
           src="/backgrounds/hero-desktop-dark.png"
@@ -136,6 +145,7 @@ export function Hero() {
           width={1024}
           height={1536}
           fetchPriority="high"
+          decoding="async"
           className="h-full w-full object-cover object-center opacity-75"
         />
       </picture>
@@ -183,7 +193,7 @@ export function Hero() {
       <div className="relative z-10 mx-auto max-w-[1280px] px-6 py-24 text-center">
         {/* Eyebrow */}
         <div ref={labelRef} className="flex justify-center mb-8">
-          <SectionLabel>Cloud Infrastructure</SectionLabel>
+          <SectionLabel>Cloud Hosting in India</SectionLabel>
         </div>
 
         {/* Main Heading */}
@@ -191,7 +201,7 @@ export function Hero() {
           ref={headingRef}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-[-0.04em] text-white mb-6"
         >
-          Host Anything.
+          Cloud Hosting in India.
           <br />
           Build Everything.
         </h1>
@@ -201,9 +211,9 @@ export function Hero() {
           ref={subRef}
           className="mx-auto max-w-2xl text-lg text-[#A1A1AA] leading-[1.6] mb-10"
         >
-          Reliable cloud infrastructure for websites, VPS, Minecraft servers,
-          Discord bots and Lavalink nodes. Built for creators, developers and
-          growing communities.
+          Fast, reliable infrastructure for websites, VPS, Minecraft servers,
+          Discord bots and Lavalink nodes. Deploy from Mumbai for creators,
+          developers and growing communities.
         </p>
 
         {/* CTAs */}

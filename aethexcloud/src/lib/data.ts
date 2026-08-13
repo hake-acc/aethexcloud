@@ -11,27 +11,27 @@ export const navLinks = [
 export const serviceLinks = [
   {
     label: "Website Hosting",
-    href: "/services/website",
+    href: "/services#website-hosting",
     description: "Deploy websites and web apps instantly",
   },
   {
     label: "VPS India",
-    href: "/services/vps",
+    href: "/services#vps-hosting",
     description: "Full root access. AMD EPYC power.",
   },
   {
     label: "Minecraft Hosting",
-    href: "/services/minecraft",
+    href: "/services#minecraft-hosting",
     description: "Optimised for smooth, lag-free gameplay",
   },
   {
     label: "Discord Bot Hosting",
-    href: "/services/discord-bot",
+    href: "/services#discord-bot-hosting",
     description: "Keep your bots online and responsive 24/7",
   },
   {
     label: "Lavalink Hosting",
-    href: "/services/lavalink",
+    href: "/services#lavalink-hosting",
     description: "High-performance music node hosting",
   },
 ];
@@ -55,7 +55,7 @@ export const coreServices = [
     title: "Website Hosting",
     description:
       "Deploy your websites, portfolios and web apps on fast, reliable infrastructure. Get online in minutes.",
-    href: "/services/website",
+    href: "/services#website-hosting",
     tag: "Web",
   },
   {
@@ -63,7 +63,7 @@ export const coreServices = [
     title: "VPS India",
     description:
       "Full root access virtual private servers powered by AMD EPYC and NVMe SSD storage, located in Mumbai.",
-    href: "/services/vps",
+    href: "/services#vps-hosting",
     tag: "VPS",
   },
   {
@@ -71,7 +71,7 @@ export const coreServices = [
     title: "Minecraft Hosting",
     description:
       "Smooth, lag-free Minecraft server hosting. Supports all major server types — Vanilla, Paper, Forge and more.",
-    href: "/services/minecraft",
+    href: "/services#minecraft-hosting",
     tag: "Game",
   },
   {
@@ -79,7 +79,7 @@ export const coreServices = [
     title: "Discord Bot Hosting",
     description:
       "Keep your Discord bots running 24/7 with guaranteed uptime. Supports Node.js, Python and more.",
-    href: "/services/discord-bot",
+    href: "/services#discord-bot-hosting",
     tag: "Bot",
   },
   {
@@ -87,7 +87,7 @@ export const coreServices = [
     title: "Lavalink Hosting",
     description:
       "High-performance Lavalink nodes for your music bots. Low latency, reliable connections.",
-    href: "/services/lavalink",
+    href: "/services#lavalink-hosting",
     tag: "Audio",
   },
 ];

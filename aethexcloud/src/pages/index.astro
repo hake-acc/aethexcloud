@@ -2,6 +2,10 @@
 import Layout from "@/layouts/Layout.astro";
 import { HomePage } from "@/components/pages/HomePage";
 ---
-<Layout>
-  <HomePage client:load />
+<Layout
+  title="Cloud Hosting in India for Websites, Servers & Communities"
+  description="Cloud hosting in India for websites, VPS, Minecraft servers, Discord bots and Lavalink nodes. Fast AMD EPYC infrastructure in Mumbai with instant deployment."
+  keywords="cloud hosting India, cloud hosting provider India, website hosting India, developer hosting India, game server hosting India"
+>
+  <HomePage client:idle />
 </Layout>

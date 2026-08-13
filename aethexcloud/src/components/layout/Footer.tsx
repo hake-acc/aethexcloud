@@ -8,11 +8,11 @@ const footerLinks = [
   {
     heading: "Services",
     links: [
-      { label: "Website Hosting", href: "/services/website" },
-      { label: "VPS India", href: "/services/vps" },
-      { label: "Minecraft Hosting", href: "/services/minecraft" },
-      { label: "Discord Bot Hosting", href: "/services/discord-bot" },
-      { label: "Lavalink Hosting", href: "/services/lavalink" },
+      { label: "Website Hosting", href: "/services#website-hosting" },
+      { label: "VPS India", href: "/services#vps-hosting" },
+      { label: "Minecraft Hosting", href: "/services#minecraft-hosting" },
+      { label: "Discord Bot Hosting", href: "/services#discord-bot-hosting" },
+      { label: "Lavalink Hosting", href: "/services#lavalink-hosting" },
     ],
   },
   {

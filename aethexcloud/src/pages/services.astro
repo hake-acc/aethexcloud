@@ -1,10 +1,42 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { ServicesPage } from "@/components/pages/ServicesPage";
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Cloud hosting services in India",
+  serviceType: "Cloud hosting",
+  provider: {
+    "@type": "Organization",
+    name: "AethexCloud",
+    url: "https://aethexcloud.com",
+  },
+  areaServed: {
+    "@type": "Country",
+    name: "India",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "AethexCloud hosting services",
+    itemListElement: [
+      "Website hosting",
+      "Virtual private servers",
+      "Minecraft server hosting",
+      "Discord bot hosting",
+      "Lavalink hosting",
+    ].map((name) => ({
+      "@type": "Offer",
+      itemOffered: { "@type": "Service", name },
+    })),
+  },
+};
 ---
 <Layout
-  title="Services"
-  description="Website hosting, VPS India, Minecraft server hosting, Discord bot hosting and Lavalink hosting — all on AMD EPYC infrastructure in Mumbai."
+  title="Hosting Services in India"
+  description="Explore website hosting, VPS India, Minecraft server hosting, Discord bot hosting and Lavalink hosting on fast AMD EPYC infrastructure in Mumbai."
+  keywords="hosting services India, website hosting India, VPS India, Minecraft server hosting India, Discord bot hosting, Lavalink server hosting"
+  additionalStructuredData={serviceSchema}
 >
-  <ServicesPage client:load />
+  <ServicesPage client:idle />
 </Layout>
