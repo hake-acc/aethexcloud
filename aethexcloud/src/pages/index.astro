@@ -1,11 +1,27 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { HomePage } from "@/components/pages/HomePage";
+import { Hero } from "@/components/sections/Hero";
+import { Stats } from "@/components/sections/Stats";
+import { CoreServices } from "@/components/sections/CoreServices";
+import { FeatureGrid } from "@/components/sections/FeatureGrid";
+import { Infrastructure } from "@/components/sections/Infrastructure";
+import { PricingSection } from "@/components/sections/PricingSection";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { FAQ } from "@/components/sections/FAQ";
+import { CTA } from "@/components/sections/CTA";
 ---
 <Layout
   title="Cloud Hosting in India for Websites, Servers & Communities"
   description="Cloud hosting in India for websites, VPS, Minecraft servers, Discord bots and Lavalink nodes. Fast AMD EPYC infrastructure in Mumbai with instant deployment."
   keywords="cloud hosting India, cloud hosting provider India, website hosting India, developer hosting India, game server hosting India"
 >
-  <HomePage client:idle />
+  <Hero client:load />
+  <Stats client:visible />
+  <CoreServices client:visible />
+  <FeatureGrid client:visible />
+  <Infrastructure client:visible />
+  <PricingSection client:visible />
+  <Testimonials client:visible />
+  <FAQ client:visible />
+  <CTA client:visible />
 </Layout>

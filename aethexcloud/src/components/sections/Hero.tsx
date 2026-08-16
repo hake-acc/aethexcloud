@@ -1,8 +1,9 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
-import { IconArrowRight } from "@tabler/icons-react";
+import { IconArrowRight, IconServer } from "@tabler/icons-react";
 import { Button } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { HeroMotionCanvas } from "@/components/animations/HeroMotionCanvas";
 
 type SplitTypeResult = {
   lines: HTMLElement[];
@@ -26,8 +27,6 @@ function SplitType(element: HTMLElement): SplitTypeResult {
     const line = document.createElement("span");
 
     mask.className = "block overflow-hidden";
-    // Keep the animated line block-level so long words/phrases can wrap
-    // inside the responsive heading instead of creating horizontal overflow.
     line.className = "block will-change-transform";
     line.textContent = nodes.map((node) => node.textContent ?? "").join("");
     mask.appendChild(line);
@@ -120,12 +119,9 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Responsive orbital artwork: the narrower source keeps its composition intact on phones,
-          while the larger source gives desktop screens more breathing room. */}
-      <picture
-        className="absolute inset-0 pointer-events-none select-none"
-      >
+    <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden pt-20 pb-16">
+      {/* Responsive orbital artwork */}
+      <picture className="absolute inset-0 pointer-events-none select-none">
         <source
           media="(max-width: 767px)"
           srcSet="/backgrounds/hero-mobile-dark.webp"
@@ -146,41 +142,40 @@ export function Hero() {
           height={1536}
           fetchPriority="high"
           decoding="async"
-          className="h-full w-full object-cover object-center opacity-75"
+          className="h-full w-full object-cover object-center opacity-60"
         />
       </picture>
 
-      {/* Keep the artwork atmospheric and preserve contrast for the headline. */}
+      {/* Atmospheric lighting layers */}
       <div
-        className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_75%_65%_at_50%_45%,transparent_15%,rgba(5,5,5,0.28)_62%,#050505_100%)]"
+        className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_75%_65%_at_50%_45%,transparent_15%,rgba(5,5,5,0.35)_62%,#050505_100%)]"
         aria-hidden="true"
       />
       <div
-        className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#050505]/35 via-transparent to-[#050505]"
+        className="absolute inset-0 pointer-events-none bg-gradient-to-b from-[#050505]/40 via-transparent to-[#050505]"
         aria-hidden="true"
       />
+
+      {/* Real-time GPU Motion Topology Canvas */}
+      <HeroMotionCanvas />
 
       {/* Decorative geometric elements */}
       <div
         ref={decorRef}
-        className="aethex-grid absolute inset-0 pointer-events-none opacity-60"
+        className="aethex-grid absolute inset-0 pointer-events-none opacity-50"
         aria-hidden="true"
       >
-        {/* Top-right circle */}
         <div className="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full border border-white/[0.04] animate-[aethex-drift_18s_ease-in-out_infinite]" />
         <div className="absolute -top-16 -right-16 w-[400px] h-[400px] rounded-full border border-white/[0.03]" />
-        {/* Bottom-left */}
         <div className="absolute -bottom-48 -left-48 w-[700px] h-[700px] rounded-full border border-white/[0.03] animate-[aethex-drift_22s_ease-in-out_infinite_reverse]" />
-        {/* Center subtle grid dot */}
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)",
+              "radial-gradient(circle, rgba(255,255,255,0.035) 1px, transparent 1px)",
             backgroundSize: "48px 48px",
           }}
         />
-        {/* Radial fade mask */}
         <div
           className="absolute inset-0"
           style={{
@@ -190,10 +185,16 @@ export function Hero() {
         />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-[1280px] px-6 py-24 text-center">
-        {/* Eyebrow */}
-        <div ref={labelRef} className="flex justify-center mb-8">
+      <div className="relative z-10 mx-auto max-w-[1280px] px-6 py-16 sm:py-20 text-center">
+        {/* Eyebrow / Node Status */}
+        <div ref={labelRef} className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
           <SectionLabel>Cloud Hosting in India</SectionLabel>
+          <div className="flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.03] px-3.5 py-1 text-xs text-[#A1A1AA]">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+            <span>Mumbai IN-BOM-1</span>
+            <span className="text-[#71717A]">•</span>
+            <span className="font-mono text-[11px] text-white">99.99% Uptime</span>
+          </div>
         </div>
 
         {/* Main Heading */}
@@ -219,7 +220,7 @@ export function Hero() {
         {/* CTAs */}
         <div
           ref={ctaRef}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
         >
           <Button variant="primary" size="lg" href="/pricing">
             Get Started
