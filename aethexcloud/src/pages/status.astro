@@ -1,0 +1,72 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { SectionLabel } from "@/components/ui/SectionLabel";
+import { LivePanelPing } from "@/components/status/LivePanelPing";
+import { ServiceStatusList } from "@/components/status/ServiceStatusList";
+import { IncidentTimeline } from "@/components/status/IncidentTimeline";
+import { IconCircleCheck, IconArrowUpRight } from "@tabler/icons-react";
+---
+
+<Layout
+  title="System Status & Live Uptime"
+  description="Real-time operational status, live panel latency, uptime metrics, and infrastructure health for AethexCloud in Mumbai, India."
+  keywords="AethexCloud status, cloud hosting status India, panel ping, server uptime, Pelican panel status"
+>
+  <div className="relative min-h-screen pt-32 pb-24 px-6 overflow-hidden">
+    {/* Ambient background glow */}
+    <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-96 w-full max-w-4xl bg-emerald-500/[0.03] blur-[120px]" />
+
+    <div className="relative mx-auto max-w-[1200px] space-y-12">
+      {/* Top Hero Banner */}
+      <div className="flex flex-col items-center text-center space-y-4 max-w-2xl mx-auto">
+        <SectionLabel>Infrastructure Health</SectionLabel>
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
+          System Status
+        </h1>
+        <p className="text-base sm:text-lg text-[#A1A1AA] leading-relaxed">
+          Live operational status, telemetry, and uptime monitoring across our Mumbai core cluster, edge networks, and control panel.
+        </p>
+
+        {/* Big Operational Banner */}
+        <div className="w-full mt-4 flex items-center justify-between rounded-[20px] border border-emerald-500/30 bg-emerald-950/20 px-6 py-4 text-emerald-300 shadow-[0_0_30px_rgba(16,185,129,0.06)]">
+          <div className="flex items-center gap-3">
+            <span className="relative flex h-3.5 w-3.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-500"></span>
+            </span>
+            <span className="text-base font-semibold text-white">All Systems Operational</span>
+          </div>
+          <span className="text-xs font-mono font-medium text-emerald-400/90 hidden sm:inline">
+            99.98% Avg Uptime
+          </span>
+        </div>
+      </div>
+
+      {/* Live Panel Ping Monitor Island */}
+      <LivePanelPing client:load />
+
+      {/* 90-Day Component Status Breakdown */}
+      <ServiceStatusList client:visible />
+
+      {/* Incident & Maintenance Timeline */}
+      <IncidentTimeline client:visible />
+
+      {/* Footer Support Prompt */}
+      <div className="aethex-surface rounded-[24px] border border-white/[0.08] p-8 text-center bg-[#111111] space-y-3">
+        <h3 className="text-xl font-semibold text-white">Experiencing an issue?</h3>
+        <p className="text-sm text-[#A1A1AA] max-w-md mx-auto">
+          If you're noticing unexpected latency or disruption with your service, reach out to our team directly.
+        </p>
+        <div className="pt-2">
+          <a
+            href="/contact"
+            className="inline-flex items-center gap-2 rounded-[14px] bg-white px-5 py-2.5 text-sm font-medium text-black transition-all hover:bg-white/90"
+          >
+            <span>Contact 24/7 Support</span>
+            <IconArrowUpRight size={16} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
