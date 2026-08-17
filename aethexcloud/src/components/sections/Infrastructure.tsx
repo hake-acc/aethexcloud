@@ -33,13 +33,27 @@ export function Infrastructure() {
           <div className="lg:col-span-5 flex flex-col gap-6">
             <ScrollReveal direction="left">
               <div className="aethex-surface aethex-border rounded-[24px] border border-white/[0.08] p-7">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="aethex-icon rounded-[12px] border border-white/[0.08] bg-white/[0.04] p-2.5">
-                    <IconMapPin size={20} stroke={1.5} className="text-white" />
+                <div className="flex items-center justify-between mb-6">
+                  <div className="flex items-center gap-3">
+                    <div className="aethex-icon rounded-[12px] border border-white/[0.08] bg-white/[0.04] p-2.5">
+                      <IconMapPin size={20} stroke={1.5} className="text-white" />
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold">CtrlS DC, Mumbai</p>
+                      <p className="text-xs text-[#71717A]">Primary South Asia Node (IN-BOM-1)</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="text-white font-semibold">CtrlS DC, Mumbai</p>
-                    <p className="text-xs text-[#71717A]">Primary South Asia Node (IN-BOM-1)</p>
+
+                  <div className="relative h-12 w-12 overflow-hidden rounded-[12px] border border-white/[0.1] bg-black/60 shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
+                    <img
+                      src="/illustrations/amd-epyc.jpg"
+                      alt="AMD EPYC Compute Engine"
+                      width={48}
+                      height={48}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover"
+                    />
                   </div>
                 </div>
 
