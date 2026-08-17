@@ -3,6 +3,7 @@ import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { infrastructureSpecs } from "@/lib/data";
 import { LiveLatencyMonitor } from "@/components/sections/LiveLatencyMonitor";
+import { AmdEpycLineIllustration } from "@/components/illustrations/ServiceLineIllustrations";
 
 const performanceHighlights = [
   { icon: IconCpu, title: "AMD EPYC Compute", desc: "Dedicated high-frequency cores delivering steady IPC under load." },
@@ -44,16 +45,8 @@ export function Infrastructure() {
                     </div>
                   </div>
 
-                  <div className="relative h-12 w-12 overflow-hidden rounded-[12px] border border-white/[0.1] bg-black/60 shadow-[0_4px_12px_rgba(0,0,0,0.4)]">
-                    <img
-                      src="/illustrations/amd-epyc.jpg"
-                      alt="AMD EPYC Compute Engine"
-                      width={48}
-                      height={48}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-full w-full object-cover"
-                    />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-[12px] border border-white/[0.08] bg-white/[0.03] text-white p-2">
+                    <AmdEpycLineIllustration className="h-full w-full" />
                   </div>
                 </div>
 

@@ -1,29 +1,21 @@
-import {
-  IconWorld,
-  IconServer,
-  IconSword,
-  IconBrandDiscord,
-  IconMusic,
-  IconArrowRight,
-} from "@tabler/icons-react";
+import { IconArrowRight } from "@tabler/icons-react";
 import { ScrollReveal } from "@/components/animations/ScrollReveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { coreServices } from "@/lib/data";
+import {
+  WebHostingLineIllustration,
+  VpsLineIllustration,
+  MinecraftLineIllustration,
+  DiscordBotLineIllustration,
+  LavalinkLineIllustration,
+} from "@/components/illustrations/ServiceLineIllustrations";
 
-const serviceIllustrations: Record<string, string> = {
-  website: "/illustrations/web-hosting.jpg",
-  vps: "/illustrations/vps.jpg",
-  minecraft: "/illustrations/minecraft.jpg",
-  "discord-bot": "/illustrations/discord-bot.jpg",
-  lavalink: "/illustrations/lavalink.jpg",
-};
-
-const serviceIcons = {
-  website: IconWorld,
-  vps: IconServer,
-  minecraft: IconSword,
-  "discord-bot": IconBrandDiscord,
-  lavalink: IconMusic,
+const serviceLineIllustrations: Record<string, React.ComponentType<{ className?: string; size?: number }>> = {
+  website: WebHostingLineIllustration,
+  vps: VpsLineIllustration,
+  minecraft: MinecraftLineIllustration,
+  "discord-bot": DiscordBotLineIllustration,
+  lavalink: LavalinkLineIllustration,
 };
 
 export function CoreServices() {
@@ -46,8 +38,7 @@ export function CoreServices() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {coreServices.map((service, i) => {
-            const Icon = serviceIcons[service.id as keyof typeof serviceIcons];
-            const illustration = serviceIllustrations[service.id];
+            const LineIllustration = serviceLineIllustrations[service.id];
             const isLast = i === coreServices.length - 1;
             const isSecondLast = i === coreServices.length - 2;
 
@@ -67,22 +58,12 @@ export function CoreServices() {
                   href={service.href}
                   className="aethex-surface aethex-border group relative flex flex-col justify-between overflow-hidden rounded-[24px] border border-white/[0.08] bg-[#111111] p-6 sm:p-7 transition-all duration-400 hover:border-white/[0.2] hover:bg-[#151515] h-full"
                 >
-                  {/* Top: 3D Illustrated Icon + Category Tag */}
+                  {/* Top: 2D Line Illustration + Category Tag */}
                   <div>
                     <div className="flex items-center justify-between mb-6">
-                      <div className="relative flex h-14 w-14 items-center justify-center overflow-hidden rounded-[16px] border border-white/[0.1] bg-black/60 shadow-[0_8px_20px_rgba(0,0,0,0.5)] transition-transform duration-400 group-hover:scale-105 group-hover:border-white/[0.25]">
-                        {illustration ? (
-                          <img
-                            src={illustration}
-                            alt={`${service.title} illustrated icon`}
-                            width={56}
-                            height={56}
-                            loading="lazy"
-                            decoding="async"
-                            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                          />
-                        ) : (
-                          Icon && <Icon size={24} stroke={1.5} className="text-white" />
+                      <div className="flex h-13 w-13 items-center justify-center rounded-[16px] border border-white/[0.08] bg-white/[0.03] text-white p-2.5 transition-all duration-300 group-hover:border-white/[0.2] group-hover:bg-white/[0.06] group-hover:shadow-[0_0_20px_rgba(255,255,255,0.06)]">
+                        {LineIllustration && (
+                          <LineIllustration className="h-full w-full transition-transform duration-400 group-hover:scale-110" />
                         )}
                       </div>
 
